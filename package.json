@@ -1,17 +1,27 @@
 {
   "name": "form-machine",
   "private": false,
-  "version": "1.0.0",
-  "homepage": "https://thanhdong98.github.io/form-machine",
+  "version": "0.0.2",
+  "homepage": "https://thanhdong98.github.io/form-machine/",
   "description": "Form Builder",
   "author": "thanhdong98",
-  "main": "src/index.tsx",
+  "main": "dist/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thanhdong98/form-machine"
+  },
+  "keywords": [
+    "form-builder",
+    "form",
+    "builder",
+    "dynamic-form",
+    "form-generator",
+    "form-schema"
+  ],
   "scripts": {
-    "start": "react-scripts start",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build"
+    "build": "tsc",
+    "prepare": "yarn build"
   },
   "dependencies": {
     "bootstrap": "5.1.0",
@@ -36,23 +46,5 @@
   "files": [
     "/dist",
     "package.json"
-  ],
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  ]
 }
