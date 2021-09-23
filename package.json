@@ -1,7 +1,7 @@
 {
   "name": "form-machine",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://thanhdong98.github.io/form-machine/",
   "description": "Form Builder",
   "author": "thanhdong98",
@@ -20,6 +20,7 @@
     "form-schema"
   ],
   "scripts": {
+    "start": "react-scripts start",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 src/**/*.css dist/",
     "build": "yarn clean && tsc && yarn copy-files",
