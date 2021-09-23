@@ -1,10 +1,10 @@
-import AddControlButton from "components/AddControlButton";
-import FormControlDefaultValue from "shared/constants/ControlValueDefault";
-import ToolboxItem from "containers/Toolbox/ToolboxItem";
 import { FC } from "react";
 import { Accordion } from "react-bootstrap";
-import { ControlType, FormControlType } from "shared/types/FormControlType";
 import { v4 } from "uuid";
+import ToolboxItem from "../../containers/Toolbox/ToolboxItem";
+import FormControlDefaultValue from "../../shared/constants/ControlValueDefault";
+import { ControlType, FormControlType } from "../../shared/types/FormControlType";
+import AddControlButton from "../AddControlButton";
 
 const FormChildrenFieldEditor: FC<{ formControlItem: FormControlType; editFormItem: (item: FormControlType) => void }> =
   ({ formControlItem, editFormItem }) => {

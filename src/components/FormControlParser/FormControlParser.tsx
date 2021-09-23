@@ -1,6 +1,6 @@
 import { FC, useMemo } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
-import { ControlType, FormControlType } from "shared/types/FormControlType";
+import { ControlType, FormControlType } from "../../shared/types/FormControlType";
 import Checkboxs from "./Checboxs";
 
 const FormControlParser: FC<{ formControlItem: FormControlType }> = ({ formControlItem }) => {
@@ -81,7 +81,7 @@ const FormControlParser: FC<{ formControlItem: FormControlType }> = ({ formContr
             <Card.Body>
               <Row>
                 {children.map((item: FormControlType) => (
-                  <Col key={`${id}-${item.id}`} md={12 / columns}>
+                  <Col key={`${id}-${item.id}`} xs={12 / columns}>
                     <FormControlParser formControlItem={item} />
                   </Col>
                 ))}
@@ -97,7 +97,7 @@ const FormControlParser: FC<{ formControlItem: FormControlType }> = ({ formContr
             </Row>
             <Row>
               {children.map((item: FormControlType) => (
-                <Col key={`${id}-${item.id}`} md={12 / columns}>
+                <Col key={`${id}-${item.id}`} xs={12 / columns}>
                   <FormControlParser formControlItem={item} />
                 </Col>
               ))}

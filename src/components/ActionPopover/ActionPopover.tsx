@@ -1,8 +1,9 @@
-import Tooltip from "components/Tooltip";
-import { FC, useState } from "react";
-import { Button } from "react-bootstrap";
-import { DownArrow, Plus, Trash, UpArrow } from "shared/icons";
-import { ControlType } from "shared/types/FormControlType";
+import { FC, useEffect, useState } from "react";
+import { Button, Col, Row } from "react-bootstrap";
+import useBreakpoint from "../../shared/hooks/useBreakpoint";
+import { DownArrow, Plus, Trash, UpArrow } from "../../shared/icons";
+import { ControlType } from "../../shared/types/FormControlType";
+import Tooltip from "../Tooltip";
 
 const ActionPopover: FC<{
   show: boolean;
@@ -11,28 +12,48 @@ const ActionPopover: FC<{
   onMove: (isUp?: boolean) => void;
 }> = ({ show = false, onAdd, onDelete, onMove }) => {
   const [showAdd, toggleShowAdd] = useState(false);
+  const breakpoint = useBreakpoint();
+
+  useEffect(() => {
+    if (!show) {
+      toggleShowAdd(false);
+    }
+  }, [show]);
+
+  const rows: Record<string, number> = {
+    sm: 6,
+    md: 3,
+    lg: 2
+  };
 
   return (
     <div
-      onMouseLeave={() => toggleShowAdd(false)}
       className="position-absolute d-flex flex-wrap justify-content-start overflow-hidden bg-white"
       style={{
-        zIndex: 999,
+        zIndex: 2,
         bottom: "calc(100% + 1px)",
         right: 0,
         width: "auto",
         transition: "height 0.25s ease-in-out",
-        height: show ? (showAdd ? 100 : 50) : 0
+        height: show ? (showAdd ? rows[breakpoint] * 40 : 50) : 0
       }}
     >
       {showAdd ? (
-        <>
+        <Row className="m-0">
           {Object.values(ControlType).map((control: ControlType) => (
-            <Button onClick={() => onAdd(control)} className="h-50 w-25" variant="outline-primary" key={`action-${control}`}>
-              {control}
-            </Button>
+            <Col
+              key={`action-${control}`}
+              className="p-0"
+              md={6}
+              lg={4}
+              style={{ height: `${100 / rows[breakpoint]}` }}
+            >
+              <Button onClick={() => onAdd(control)} className="w-100 h-100" variant="outline-primary">
+                {control}
+              </Button>
+            </Col>
           ))}
-        </>
+        </Row>
       ) : (
         <>
           <Tooltip text="Add item">

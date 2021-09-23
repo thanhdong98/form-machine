@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Col, Form, Row, Button } from "react-bootstrap";
+import { Trash } from "../../shared/icons";
 
 const FormValueFields: FC<{ values?: string[]; onChange: (value: string[]) => void }> = ({ values = [], onChange }) => {
   const onChangeField = (e: any, i: number) => {
@@ -25,7 +26,7 @@ const FormValueFields: FC<{ values?: string[]; onChange: (value: string[]) => vo
           </Col>
           <Col md={3}>
             <Button className="w-100 h-100" variant="danger" onClick={() => onDeleteField(index)} size="sm">
-              <i className="fa fa-trash"></i>
+              <Trash height={20} />
             </Button>
           </Col>
         </Row>

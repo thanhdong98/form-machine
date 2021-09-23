@@ -1,4 +1,4 @@
-import { FormControlType } from "shared/types/FormControlType";
+import { FormControlType } from "../types/FormControlType";
 
 export const getFormLabel = (id: string, list: FormControlType[]): string => {
   let res: string | undefined;

@@ -1,8 +1,8 @@
-import FormBuilder from "containers/FormBuilder";
+import FormBuilder from "../containers/FormBuilder";
 import { useState } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
-import { ControlType, FormControlType, InputFieldType } from "shared/types/FormControlType";
-import FormGeneratorSample from "samples/FormGeneratorSample";
+import { ControlType, FormControlType, InputFieldType } from "../shared/types/FormControlType";
+import FormGeneratorSample from "./FormGeneratorSample";
 
 const Sample = () => {
   const [isFormBuilder, toggleShowFormBuilder] = useState(true);

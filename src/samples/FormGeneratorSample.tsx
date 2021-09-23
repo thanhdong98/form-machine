@@ -1,8 +1,8 @@
-import FormGenerator from "containers/FormGenerator";
+import FormGenerator from "../containers/FormGenerator";
 import { FC, useState } from "react";
 import { Col, Row, Button } from "react-bootstrap";
-import { FormControlType } from "shared/types/FormControlType";
-import { parseTemplate } from "shared/utils/parseTemplate";
+import { FormControlType } from "../shared/types/FormControlType";
+import { parseTemplate } from "../shared/utils/parseTemplate";
 
 const FormGeneratorSample: FC = () => {
   const [schema, setSchema] = useState<FormControlType[]>([]);

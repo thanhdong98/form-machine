@@ -1,12 +1,12 @@
-import AddControlButton from "components/AddControlButton";
-import Tooltip from "components/Tooltip";
-import FormControlDefaultValue from "shared/constants/ControlValueDefault";
 import { FC, useContext } from "react";
-import { Accordion, Col, Row, Button } from "react-bootstrap";
-import { Download, Save } from "shared/icons";
-import FormBuilderContext from "shared/types/FormBuilderContext";
-import { ControlType, FormControlType } from "shared/types/FormControlType";
+import { Accordion, Button, Col, Row } from "react-bootstrap";
 import { v4 } from "uuid";
+import AddControlButton from "../../components/AddControlButton";
+import Tooltip from "../../components/Tooltip";
+import FormControlDefaultValue from "../../shared/constants/ControlValueDefault";
+import { Download, Save } from "../../shared/icons";
+import FormBuilderContext from "../../shared/types/FormBuilderContext";
+import { ControlType, FormControlType } from "../../shared/types/FormControlType";
 import ToolboxItem from "./ToolboxItem";
 
 const Toolbox: FC = () => {
@@ -56,25 +56,25 @@ const Toolbox: FC = () => {
   return schema.length ? (
     <>
       <Row className="justify-content-between mb-3">
-        <Col>
+        <Col xs={4} lg={6}>
           <h1>Edit</h1>
         </Col>
-        <Col md={2} className="d-flex align-items-center">
+        <Col xs={4} lg={3} className="d-flex align-items-center justify-content-end">
           <Tooltip text="Download template">
-            <Button variant="outline-info" className="w-100" onClick={downloadTemplate}>
+            <Button variant="outline-info" className="btn-control" onClick={downloadTemplate}>
               <Download height="100%" />
             </Button>
           </Tooltip>
         </Col>
-        <Col md={2} className="d-flex align-items-center">
+        <Col xs={4} lg={3} className="d-flex align-items-center justify-content-end">
           <Tooltip text="Save template">
-            <Button variant="outline-info" className="w-100" onClick={onSave}>
+            <Button variant="outline-info" className="btn-control" onClick={onSave}>
               <Save height="100%" />
             </Button>
           </Tooltip>
         </Col>
       </Row>
-      <Accordion flush={false}>
+      <Accordion flush={false} className="mb-2">
         {schema.map((formItem: FormControlType) => (
           <ToolboxItem
             key={`toolbox-${formItem.id}`}

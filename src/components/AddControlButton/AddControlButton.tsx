@@ -1,6 +1,6 @@
 import { FC, ReactNode, useState } from "react";
 import { Button } from "react-bootstrap";
-import { ControlType } from "shared/types/FormControlType";
+import { ControlType } from "../../shared/types/FormControlType";
 
 const AddControlButton: FC<{ onAdd: (controlType: ControlType) => void; children: ReactNode }> = ({
   onAdd,
@@ -20,7 +20,7 @@ const AddControlButton: FC<{ onAdd: (controlType: ControlType) => void; children
         <div
           className="position-absolute d-flex flex-wrap justify-content-start overflow-hidden bg-white"
           style={{
-            zIndex: 999,
+            zIndex: 2,
             top: "calc(100% + 1px)",
             right: 0,
             width: "auto",
@@ -29,7 +29,12 @@ const AddControlButton: FC<{ onAdd: (controlType: ControlType) => void; children
           }}
         >
           {Object.values(ControlType).map((control: ControlType) => (
-            <Button onClick={() => onAdd(control)} className="h-50 w-25" variant="outline-primary" key={`action-${control}`}>
+            <Button
+              onClick={() => onAdd(control)}
+              className="h-50 w-25"
+              variant="outline-primary"
+              key={`action-${control}`}
+            >
               {control}
             </Button>
           ))}

@@ -1,13 +1,13 @@
-import FormControlParser from "components/FormControlParser";
 import { FC, useCallback } from "react";
-import { Card, Form, Button } from "react-bootstrap";
-import { FormControlType } from "shared/types/FormControlType";
-import { getFormValue } from "shared/utils/getFormValue";
+import { Button, Form } from "react-bootstrap";
+import FormControlParser from "../../components/FormControlParser";
+import { FormControlType } from "../../shared/types/FormControlType";
+import { getFormValue } from "../../shared/utils/getFormValue";
 
 const FormGenerator: FC<{ schema: FormControlType[]; onSubmit?: (data: object) => void; className?: string }> = ({
   schema = [],
   onSubmit,
-  className
+  className = ""
 }) => {
   const onSubmitForm = useCallback(
     (e: any) => {
@@ -22,16 +22,14 @@ const FormGenerator: FC<{ schema: FormControlType[]; onSubmit?: (data: object) =
   );
 
   return schema.length ? (
-    <Card body className={className}>
-      <Form onSubmit={onSubmitForm}>
-        {schema.map((item: FormControlType) => (
-          <FormControlParser formControlItem={item} key={`parser-${item.id}`} />
-        ))}
-        <Button variant="success" type="submit">
-          Submit
-        </Button>
-      </Form>
-    </Card>
+    <Form onSubmit={onSubmitForm} className={`${className} text-left`}>
+      {schema.map((item: FormControlType) => (
+        <FormControlParser formControlItem={item} key={`parser-${item.id}`} />
+      ))}
+      <Button variant="success" type="submit">
+        Submit
+      </Button>
+    </Form>
   ) : (
     <h3 className="text-center">This form is empty</h3>
   );

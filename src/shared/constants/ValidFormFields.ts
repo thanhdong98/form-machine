@@ -1,5 +1,5 @@
-import { ControlType } from "shared/types/FormControlType";
-import { FormFieldType } from "shared/types/FormFieldType";
+import { ControlType } from "../types/FormControlType";
+import { FormFieldType } from "../types/FormFieldType";
 
 const ValidFormFields: Record<ControlType, FormFieldType[]> = {
   Input: [

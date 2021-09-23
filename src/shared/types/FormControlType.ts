@@ -13,9 +13,8 @@ export enum InputFieldType {
   password = "password",
   time = "time",
   date = "date",
-  datetime ="datetime-local"
+  datetime = "datetime-local"
 }
-
 
 interface FormControlType {
   id?: string;
