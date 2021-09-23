@@ -76,7 +76,7 @@ const FormControlParser: FC<{ formControlItem: FormControlType }> = ({ formContr
         );
       default:
         return bordered ? (
-          <Card>
+          <Card className="mb-3">
             {label && <Card.Header>{label}</Card.Header>}
             <Card.Body>
               <Row>

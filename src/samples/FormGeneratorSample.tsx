@@ -41,6 +41,12 @@ const FormGeneratorSample: FC = () => {
             Upload Template
           </Button>
         </Col>
+
+        <Col md={12} className="text-center">
+          <hr />
+          <i> (Download form template from Form Builder and upload to test) </i>
+          <hr />
+        </Col>
       </Row>
       <FormGenerator schema={schema} className="my-4" />
     </>
