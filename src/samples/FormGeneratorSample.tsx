@@ -48,7 +48,13 @@ const FormGeneratorSample: FC = () => {
           <hr />
         </Col>
       </Row>
-      <FormGenerator schema={schema} className="my-4" />
+      <FormGenerator
+        schema={schema}
+        className="my-4"
+        onSubmit={(result: object) =>
+          alert("Thank for your submission! The result is:\n" + (result as any[]).map((r) => r.question + ": " + r.answer).join("\n"))
+        }
+      />
     </>
   );
 };

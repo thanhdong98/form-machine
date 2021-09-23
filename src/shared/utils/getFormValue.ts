@@ -5,7 +5,7 @@ export const getFormLabel = (id: string, list: FormControlType[]): string => {
 
   for (const item of list) {
     if (item.id === id) {
-      res = item.label + " " + item.id;
+      res = item.label;
       break;
     } else if (item.children?.length) {
       res = getFormLabel(id, item.children);
@@ -17,13 +17,8 @@ export const getFormLabel = (id: string, list: FormControlType[]): string => {
 };
 
 export const getFormValue = (formValue: object, schema: FormControlType[]) => {
-  let result: object = {};
-  Object.entries(formValue).forEach((entries: string[]) => {
-    result = {
-      ...result,
-      [getFormLabel(entries[0], schema)]: entries[1]
-    };
-  });
-
-  return result;
+  return Object.entries(formValue).map((entries: string[]) => ({
+    question: getFormLabel(entries[0], schema),
+    answer: entries[1]
+  }));
 };
