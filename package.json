@@ -1,7 +1,7 @@
 {
   "name": "form-machine",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.11",
   "homepage": "https://thanhdong98.github.io/form-machine/",
   "description": "Form Builder",
   "author": "thanhdong98",
@@ -52,5 +52,9 @@
     "copyfiles": "^2.4.1",
     "gh-pages": "^3.2.3",
     "rimraf": "^3.0.2"
-  }
+  },
+  "files": [
+    "dist",
+    "package.json"
+  ]
 }
