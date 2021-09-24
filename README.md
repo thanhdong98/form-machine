@@ -1,10 +1,9 @@
 # Form Machine - Build Form Quickly and Effectively
 - Building Form quickly and saving the Form template as json schema.
-- Rendering Form by the json schema (support convert string to schema object). Get Form value
+- Rendering Form by the json schema (support converting string to schema object). Get form submitted result.
+- [Demo page](https://thanhdong98.github.io/form-machine/)
 
-  [![NPM Version][npm-image]][npm-url]
-  [![NPM Downloads][downloads-image]][downloads-url]
-```js
+```javascript
 import { FormBuilder, FormGenerator } from "form-machine";
 
 const App = () => {
@@ -28,10 +27,8 @@ or with `npm`
 $ npm install form-machine
 ```
 
----------------	
 ## FormBuilder
-
-### With existed template (to update/clone template).
+### With existing template (to update/clone template).
 ```javascript
 import { FormBuilder } from "form-machine";
 
@@ -147,8 +144,8 @@ const App = () => {
 }
 ```
 
-### Without existed template (to create new template).
 
+### Without existing template (to create new template).
 ```javascript
 import { FC } from 'react';
 import { FormBuilder } from "form-machine";
@@ -158,8 +155,8 @@ const App: FC = () => (
 );
 ```
 
-### Saving template.
 
+### Saving template.
 ```javascript
 import { FormBuilder } from "form-machine";
 
@@ -170,12 +167,9 @@ const App = () => (
 );
 ```
 
----------------	
 
 ## Form Generator
-
 ### Examples
-
 ```javascript
 import { FormGenerator } from "form-machine";
 
@@ -196,10 +190,8 @@ const App = () => (
 );
 ```
 
----------------
 
 ## Template Schema
-
 ### Schema Type
 ```typescript
  type FormControlType = {
@@ -217,9 +209,9 @@ const App = () => (
  }
 ```
 
-### Schema Sample
 
-```json
+### Schema Sample
+```javascript
  {
       controlType: "Input",
       defaultValue: "",
@@ -327,20 +319,20 @@ const App = () => (
 
 ### Submitted result
 
-- The submitted result is a array of question and answer.
+- The submitted result is an array of items containing a question and an answer.
 - Examples:
-```json
+```javascript
   [
     { question: "What 's your name", answer: "NTDong" },
     { question: "Gender", answer: "Male"},
     { question: "Job", answer: "Fullstack Developer"},
-    { question: "Major": answer: "C#, ReactJS"}
+    { question: "Major", answer: "C#, ReactJS"}
   ]
 ````
 
---------------
 
 ## Feature
+
 - [x] [Demo Form Machine](https://thanhdong98.github.io/form-machine/)
 - [x] Typescript Support
 - [ ] Unit test (not implement yet)
