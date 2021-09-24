@@ -5,7 +5,7 @@ import { FormControlType } from "../../shared/types/FormControlType";
 import FormGenerator from "../FormGenerator";
 import Toolbox from "../Toolbox";
 
-const FormBuilder: FC<{ schema: FormControlType[]; onSave?: (schema: FormControlType[]) => void }> = ({
+const FormBuilder: FC<{ schema?: FormControlType[]; onSave?: (schema: FormControlType[]) => void }> = ({
   schema = [],
   onSave
 }) => {
