@@ -1,7 +1,7 @@
 {
   "name": "form-machine",
   "private": false,
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "https://thanhdong98.github.io/form-machine/",
   "description": "Form Builder",
   "author": "thanhdong98",
@@ -52,23 +52,5 @@
     "copyfiles": "^2.4.1",
     "gh-pages": "^3.2.3",
     "rimraf": "^3.0.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
