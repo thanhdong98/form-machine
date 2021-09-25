@@ -1,9 +1,9 @@
 {
   "name": "form-machine",
   "private": false,
-  "version": "0.0.12",
+  "version": "0.0.13",
   "homepage": "https://thanhdong98.github.io/form-machine/",
-  "description": "Form Builder",
+  "description": "Form builder and generator, support manage form templates and use forms by schema effectively",
   "author": "thanhdong98",
   "main": "dist/index.js",
   "license": "MIT",
@@ -52,6 +52,7 @@
   },
   "files": [
     "/dist",
-    "package.json"
+    "package.json",
+    "index.d.ts"
   ]
 }
