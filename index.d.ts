@@ -1,6 +1,23 @@
 import { Component } from "react";
-import { FormControlType, SubmittedValueType, ControlType } from "./src/shared/types";
 
+export interface SubmittedValueType {
+  question?: string;
+  answer?: string;
+}
+export interface FormControlType {
+  id?: string;
+  controlType: "Input" | "Checkbox" | "Radio" | "Select" | "TextArea" | "Section";
+  label?: string;
+  value?: string | boolean | number | string[];
+  placeholder?: string;
+  defaultValue?: string | number | string[];
+  values?: string[];
+  disabled?: boolean;
+  type?: "number" | "text" | "password" | "time" | "date" | "datetime-local";
+  columns?: 1 | 2 | 3 | 4 | 6;
+  children?: FormControlType[];
+  bordered?: boolean;
+}
 export interface FormBuilderProps {
   schema?: FormControlType[];
   onSave?: (schema: FormControlType[]) => void;
@@ -17,5 +34,3 @@ declare class FormGenerator extends Component<FormGeneratorProps, any> {}
 declare module "form-machine" {}
 
 export { FormBuilder, FormGenerator };
-export type { FormControlType, ControlType, SubmittedValueType };
-export { parseTemplate } from "./src/shared/utils";
