@@ -1,8 +1,8 @@
 import { FC, ReactElement, useCallback, useMemo } from "react";
 import { Form } from "react-bootstrap";
+import ToolboxList from "../../containers/Toolbox/ToolboxList";
 import { ValidFormFields } from "../../shared/constants";
-import { ControlType, FormControlType, InputFieldType, FormFieldType } from "../../shared/types";
-import FormChildrenFieldEditor from "./FormChildrenFieldEditor";
+import { ControlType, FormControlType, FormFieldType, InputFieldType } from "../../shared/types";
 import FormValueFieldEditor from "./FormValueFieldEditor";
 
 const FormFieldEditor: FC<{ formControlItem: FormControlType; editFormItem: (formItem: FormControlType) => void }> = ({
@@ -95,7 +95,12 @@ const FormFieldEditor: FC<{ formControlItem: FormControlType; editFormItem: (for
         </Form.Select>
       ),
       value: <div>not implement yet</div>,
-      children: <FormChildrenFieldEditor editFormItem={editFormItem} formControlItem={formControlItem} />,
+      children: (
+        <ToolboxList
+          schema={formControlItem.children || []}
+          editSchema={(schema: FormControlType[]) => editFormItem({ ...formControlItem, children: [...schema] })}
+        />
+      ),
       columns: (
         <Form.Select size="sm" onChange={onChange} value={formControlItem.columns} name="columns">
           {[1, 2, 3, 4, 6].map((val) => (

@@ -28,13 +28,8 @@ const ActionPopover: FC<{
 
   return (
     <div
-      className="position-absolute d-flex flex-wrap justify-content-start overflow-hidden bg-white"
+      className="position-absolute d-flex flex-wrap justify-content-start overflow-hidden bg-white controls-popover"
       style={{
-        zIndex: 2,
-        bottom: "calc(100% + 1px)",
-        right: 0,
-        width: "auto",
-        transition: "height 0.25s ease-in-out",
         height: show ? (showAdd ? rows[breakpoint] * 40 : 50) : 0
       }}
     >

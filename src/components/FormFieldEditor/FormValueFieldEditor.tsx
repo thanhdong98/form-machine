@@ -21,10 +21,10 @@ const FormValueFields: FC<{ values?: string[]; onChange: (value: string[]) => vo
     <>
       {values.map((val: string, index: number) => (
         <Row className="mb-2" key={`val-${index}`}>
-          <Col md={9}>
+          <Col xs={9} md={8} lg={9}>
             <Form.Control type="text" value={val} onChange={(e) => onChangeField(e, index)} name="defaultValue" />
           </Col>
-          <Col md={3}>
+          <Col xs={3} md={4} lg={3}>
             <Button className="w-100 h-100" variant="danger" onClick={() => onDeleteField(index)} size="sm">
               <Trash height={20} />
             </Button>
@@ -32,9 +32,9 @@ const FormValueFields: FC<{ values?: string[]; onChange: (value: string[]) => vo
         </Row>
       ))}
       <Row>
-        <Col md={6} onClick={onAddField}>
+        <Col xs={12} onClick={onAddField}>
           <Button variant="success" className="w-100" size="lg">
-            Add Field
+            Add Value
           </Button>
         </Col>
       </Row>
