@@ -16,7 +16,7 @@ export enum InputFieldType {
   datetime = "datetime-local"
 }
 
-interface FormControlType {
+export interface FormControlType {
   id?: string;
   controlType: ControlType;
   label?: string;
@@ -30,5 +30,3 @@ interface FormControlType {
   children?: FormControlType[];
   bordered?: boolean;
 }
-
-export type { FormControlType };

@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { FormControlType } from "./FormControlType";
 
-export type FormBuilderContextType = {
+export interface FormBuilderContextType {
   schema: FormControlType[];
   setSchema: (schema: FormControlType[]) => void;
   onSave?: () => void;

@@ -1,7 +1,6 @@
-import { ControlType } from "../types/FormControlType";
-import { FormFieldType } from "../types/FormFieldType";
+import { ControlType, FormFieldType } from "../types";
 
-const ValidFormFields: Record<ControlType, FormFieldType[]> = {
+export const ValidFormFields: Record<ControlType, FormFieldType[]> = {
   Input: [
     FormFieldType.controlType,
     FormFieldType.type,
@@ -34,5 +33,3 @@ const ValidFormFields: Record<ControlType, FormFieldType[]> = {
   TextArea: [FormFieldType.controlType, FormFieldType.label, FormFieldType.defaultValue, FormFieldType.disabled],
   Section: [FormFieldType.label, FormFieldType.columns, FormFieldType.bordered, FormFieldType.children]
 };
-
-export default ValidFormFields;

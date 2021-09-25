@@ -1,6 +1,6 @@
 import { FC, useMemo } from "react";
 import { Card, Col, Form, Row } from "react-bootstrap";
-import { ControlType, FormControlType } from "../../shared/types/FormControlType";
+import { ControlType, FormControlType } from "../../shared/types";
 import Checkboxs from "./Checboxs";
 
 const FormControlParser: FC<{ formControlItem: FormControlType }> = ({ formControlItem }) => {

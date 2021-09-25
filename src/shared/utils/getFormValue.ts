@@ -1,4 +1,5 @@
-import { FormControlType } from "../types/FormControlType";
+import { FormControlType } from "../types";
+import { SubmittedValueType } from "../types";
 
 export const getFormLabel = (id: string, list: FormControlType[]): string => {
   let res: string | undefined;
@@ -16,7 +17,7 @@ export const getFormLabel = (id: string, list: FormControlType[]): string => {
   return res || "";
 };
 
-export const getFormValue = (formValue: object, schema: FormControlType[]) => {
+export const getFormValue = (formValue: object, schema: FormControlType[]): SubmittedValueType[] => {
   return Object.entries(formValue).map((entries: string[]) => ({
     question: getFormLabel(entries[0], schema),
     answer: entries[1]

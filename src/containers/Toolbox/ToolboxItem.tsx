@@ -1,8 +1,7 @@
 import { FC, useState } from "react";
 import { Accordion } from "react-bootstrap";
-import ActionPopover from "../../components/ActionPopover";
-import FormFieldEditor from "../../components/FormFieldEditor";
-import { ControlType, FormControlType } from "../../shared/types/FormControlType";
+import { ActionPopover, FormFieldEditor } from "../../components";
+import { ControlType, FormControlType } from "../../shared/types";
 
 const ToolboxItem: FC<{
   formItem: FormControlType;
@@ -11,31 +10,31 @@ const ToolboxItem: FC<{
   editFormItem: (item: FormControlType) => void;
   onMove: (id: string, isUp?: boolean) => void;
 }> = ({ formItem, addFormItem, deleteFormItem, editFormItem, onMove }) => {
-  const [showAction, toggleShowAction] = useState(false);
+  const [showAction, toggleShowAction] = useState<"controls" | "actions">();
 
   return (
     <Accordion.Item
       eventKey={formItem.id || ""}
       key={formItem.id}
       className="position-relative"
-      onMouseEnter={() => {
-        toggleShowAction(true);
-      }}
-      onMouseLeave={() => toggleShowAction(false)}
+      onMouseEnter={() => toggleShowAction("actions")}
+      onTouchEnd={() => toggleShowAction("actions")}
+      onMouseLeave={() => toggleShowAction(undefined)}
     >
       <ActionPopover
         show={showAction}
+        showControls={() => toggleShowAction("controls")}
         onAdd={(control: ControlType) => {
           addFormItem(control, formItem.id);
-          toggleShowAction(false);
+          toggleShowAction(undefined);
         }}
         onDelete={() => {
           deleteFormItem(formItem?.id || "");
-          toggleShowAction(false);
+          toggleShowAction(undefined);
         }}
         onMove={(isUp?: boolean) => {
           onMove(formItem?.id || "", isUp);
-          toggleShowAction(false);
+          toggleShowAction(undefined);
         }}
       />
       <Accordion.Header>

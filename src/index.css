@@ -4,10 +4,22 @@
   max-width: 100%;
 }
 
+.btn-item-control {
+  overflow: hidden;
+}
+
 .btn-outline-info > svg {
   fill: #0dcaf0;
 }
 
 .btn-outline-info:hover > svg {
   fill: white;
+}
+
+.controls-popover {
+  z-index: 2;
+  bottom: calc(100% + 1px);
+  right: 0;
+  width: auto;
+  transition: height 0.25s ease-in-out;
 }

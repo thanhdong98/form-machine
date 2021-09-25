@@ -1,4 +1,4 @@
-import { ControlType, FormControlType } from "../types/FormControlType";
+import { ControlType, FormControlType } from "../types";
 
 const CheckboxDefaultValue: FormControlType = {
   controlType: ControlType.Checkbox,
@@ -45,7 +45,7 @@ const SectionDefaultValue: FormControlType = {
   bordered: false
 };
 
-const FormControlDefaultValue: Record<ControlType, FormControlType> = {
+export const ControlDefaultValue: Record<ControlType, FormControlType> = {
   Checkbox: CheckboxDefaultValue,
   Radio: RadioDefaultValue,
   Input: InputDefaultValue,
@@ -53,5 +53,3 @@ const FormControlDefaultValue: Record<ControlType, FormControlType> = {
   Select: SelectDefaultValue,
   Section: SectionDefaultValue
 };
-
-export default FormControlDefaultValue;
