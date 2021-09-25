@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,aACE,UAAW,CACX,WAAY,CACZ,cACF,CAEA,sBACE,YACF,CAEA,4BACE,SACF","file":"main.0da0b494.chunk.css","sourcesContent":[".btn-control {\n  width: 50px;\n  height: 40px;\n  max-width: 100%;\n}\n\n.btn-outline-info > svg {\n  fill: #0dcaf0;\n}\n\n.btn-outline-info:hover > svg {\n  fill: white;\n}\n"]}
