@@ -1,6 +1,6 @@
 import { FC, ReactNode, useState } from "react";
 import { Button } from "react-bootstrap";
-import { ControlType } from "../../shared/types/FormControlType";
+import { ControlType } from "../../shared/types";
 
 const AddControlButton: FC<{ onAdd: (controlType: ControlType) => void; children: ReactNode }> = ({
   onAdd,

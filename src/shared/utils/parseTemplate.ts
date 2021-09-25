@@ -1,4 +1,4 @@
-import { FormControlType } from "../types/FormControlType";
+import { FormControlType } from "../types";
 
 export const parseTemplate = (templateStr = ""): FormControlType[] => {
   try {

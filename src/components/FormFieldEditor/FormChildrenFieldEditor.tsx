@@ -2,15 +2,15 @@ import { FC } from "react";
 import { Accordion } from "react-bootstrap";
 import { v4 } from "uuid";
 import ToolboxItem from "../../containers/Toolbox/ToolboxItem";
-import FormControlDefaultValue from "../../shared/constants/ControlValueDefault";
-import { ControlType, FormControlType } from "../../shared/types/FormControlType";
+import { ControlDefaultValue } from "../../shared/constants";
+import { ControlType, FormControlType } from "../../shared/types";
 import AddControlButton from "../AddControlButton";
 
 const FormChildrenFieldEditor: FC<{ formControlItem: FormControlType; editFormItem: (item: FormControlType) => void }> =
   ({ formControlItem, editFormItem }) => {
     const { children = [] } = formControlItem;
     const addChild = (type: ControlType, afterId?: string) => {
-      const newItem = { ...FormControlDefaultValue[type], id: v4() };
+      const newItem = { ...ControlDefaultValue[type], id: v4() };
       if (afterId) {
         const afterIndex = children.findIndex((item: FormControlType) => item.id === afterId);
         children.splice(afterIndex + 1, 0, newItem);

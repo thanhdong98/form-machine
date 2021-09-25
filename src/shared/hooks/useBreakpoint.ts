@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import throttle from "lodash.throttle";
 
-const getDeviceConfig = (width: number): "xs" | "sm" | "md" | "lg" => {
+const getDeviceConfig = (width: number): "sm" | "md" | "lg" => {
   if (width < 720) {
     return "sm";
   } else if (width < 1024) {
@@ -11,7 +11,7 @@ const getDeviceConfig = (width: number): "xs" | "sm" | "md" | "lg" => {
   }
 };
 
-const useBreakpoint = (): "xs" | "sm" | "md" | "lg" => {
+export const useBreakpoint = (): "sm" | "md" | "lg" => {
   const [brkPnt, setBrkPnt] = useState(() => getDeviceConfig(window.innerWidth));
 
   useEffect(() => {
@@ -24,5 +24,3 @@ const useBreakpoint = (): "xs" | "sm" | "md" | "lg" => {
 
   return brkPnt;
 };
-
-export default useBreakpoint;

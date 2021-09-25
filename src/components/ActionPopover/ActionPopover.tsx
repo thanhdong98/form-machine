@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import useBreakpoint from "../../shared/hooks/useBreakpoint";
+import { useBreakpoint } from "../../shared/hooks";
 import { DownArrow, Plus, Trash, UpArrow } from "../../shared/icons";
-import { ControlType } from "../../shared/types/FormControlType";
+import { ControlType } from "../../shared/types";
 import Tooltip from "../Tooltip";
 
 const ActionPopover: FC<{

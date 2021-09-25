@@ -1,12 +1,10 @@
 import { FC, useContext } from "react";
 import { Accordion, Button, Col, Row } from "react-bootstrap";
 import { v4 } from "uuid";
-import AddControlButton from "../../components/AddControlButton";
-import Tooltip from "../../components/Tooltip";
-import FormControlDefaultValue from "../../shared/constants/ControlValueDefault";
+import { AddControlButton, Tooltip } from "../../components";
+import { ControlDefaultValue } from "../../shared/constants";
 import { Download, Save } from "../../shared/icons";
-import FormBuilderContext from "../../shared/types/FormBuilderContext";
-import { ControlType, FormControlType } from "../../shared/types/FormControlType";
+import { ControlType, FormBuilderContext, FormControlType } from "../../shared/types";
 import ToolboxItem from "./ToolboxItem";
 
 const Toolbox: FC = () => {
@@ -15,9 +13,9 @@ const Toolbox: FC = () => {
   const addFormItem = (type: ControlType, afterId = "") => {
     if (afterId) {
       const afterIndex = schema.findIndex((formItem: FormControlType) => formItem.id === afterId);
-      schema.splice(afterIndex + 1, 0, { ...FormControlDefaultValue[type], id: v4() });
+      schema.splice(afterIndex + 1, 0, { ...ControlDefaultValue[type], id: v4() });
       setSchema([...schema]);
-    } else setSchema([...schema, { ...FormControlDefaultValue[type], id: v4() }]);
+    } else setSchema([...schema, { ...ControlDefaultValue[type], id: v4() }]);
   };
 
   const deleteFormItem = (id: string) => setSchema(schema.filter((item: FormControlType) => item.id !== id));

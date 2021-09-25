@@ -1,8 +1,7 @@
 import { FC, useState } from "react";
 import { Accordion } from "react-bootstrap";
-import ActionPopover from "../../components/ActionPopover";
-import FormFieldEditor from "../../components/FormFieldEditor";
-import { ControlType, FormControlType } from "../../shared/types/FormControlType";
+import { ActionPopover, FormFieldEditor } from "../../components";
+import { ControlType, FormControlType } from "../../shared/types";
 
 const ToolboxItem: FC<{
   formItem: FormControlType;

@@ -1,14 +1,14 @@
 import { FC, useCallback } from "react";
 import { Button, Form } from "react-bootstrap";
-import FormControlParser from "../../components/FormControlParser";
-import { FormControlType } from "../../shared/types/FormControlType";
-import { getFormValue } from "../../shared/utils/getFormValue";
+import { FormControlParser } from "../../components";
+import { FormControlType, SubmittedValueType } from "../../shared/types";
+import { getFormValue } from "../../shared/utils";
 
-const FormGenerator: FC<{ schema: FormControlType[]; onSubmit?: (data: object) => void; className?: string }> = ({
-  schema = [],
-  onSubmit,
-  className = ""
-}) => {
+const FormGenerator: FC<{
+  schema: FormControlType[];
+  onSubmit?: (result: SubmittedValueType[]) => void;
+  className?: string;
+}> = ({ schema = [], onSubmit, className = "" }) => {
   const onSubmitForm = useCallback(
     (e: any) => {
       e.preventDefault();

@@ -1,8 +1,7 @@
 import { FC, ReactElement, useCallback, useMemo } from "react";
 import { Form } from "react-bootstrap";
-import ValidFormFields from "../../shared/constants/ValidFormFields";
-import { ControlType, FormControlType, InputFieldType } from "../../shared/types/FormControlType";
-import { FormFieldType } from "../../shared/types/FormFieldType";
+import { ValidFormFields } from "../../shared/constants";
+import { ControlType, FormControlType, InputFieldType, FormFieldType } from "../../shared/types";
 import FormChildrenFieldEditor from "./FormChildrenFieldEditor";
 import FormValueFieldEditor from "./FormValueFieldEditor";
 
