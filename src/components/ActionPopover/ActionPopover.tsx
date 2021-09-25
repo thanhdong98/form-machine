@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import { useBreakpoint } from "../../shared/hooks";
 import { DownArrow, Plus, Trash, UpArrow } from "../../shared/icons";
@@ -6,19 +6,13 @@ import { ControlType } from "../../shared/types";
 import Tooltip from "../Tooltip";
 
 const ActionPopover: FC<{
-  show: boolean;
+  show?: "actions" | "controls";
+  showControls: () => void;
   onAdd: (element: ControlType) => void;
   onDelete: () => void;
   onMove: (isUp?: boolean) => void;
-}> = ({ show = false, onAdd, onDelete, onMove }) => {
-  const [showAdd, toggleShowAdd] = useState(false);
+}> = ({ show, showControls, onAdd, onDelete, onMove }) => {
   const breakpoint = useBreakpoint();
-
-  useEffect(() => {
-    if (!show) {
-      toggleShowAdd(false);
-    }
-  }, [show]);
 
   const rows: Record<string, number> = {
     sm: 6,
@@ -30,10 +24,10 @@ const ActionPopover: FC<{
     <div
       className="position-absolute d-flex flex-wrap justify-content-start overflow-hidden bg-white controls-popover"
       style={{
-        height: show ? (showAdd ? rows[breakpoint] * 40 : 50) : 0
+        height: show ? (show === "controls" ? rows[breakpoint] * 40 : 50) : 0
       }}
     >
-      {showAdd ? (
+      {show === "controls" ? (
         <Row className="m-0">
           {Object.values(ControlType).map((control: ControlType) => (
             <Col
@@ -52,7 +46,7 @@ const ActionPopover: FC<{
       ) : (
         <>
           <Tooltip text="Add item">
-            <Button variant="success" className="h-100" onClick={() => toggleShowAdd(true)}>
+            <Button variant="success" className="h-100" onClick={showControls}>
               <Plus height={25} />
             </Button>
           </Tooltip>
